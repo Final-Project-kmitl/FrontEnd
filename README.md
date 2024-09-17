@@ -1,6 +1,8 @@
 # frontend
 
 A new Flutter project.
+-install flutter
+-iunstall andriod studio
 
 ## Getting Started
 
