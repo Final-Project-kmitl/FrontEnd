@@ -21,32 +21,52 @@ class PreviewScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: const Text('Preview Image'),
-      ),
-      body: Column(
-        mainAxisAlignment: MainAxisAlignment.center,
-        children: [
-          // Display the captured image
-          Image.file(File(picture.path), fit: BoxFit.cover),
+      backgroundColor: Colors.black,
+      body: Center(
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            // Display the captured image
+            Image.file(File(picture.path), fit: BoxFit.cover),
 
-          const SizedBox(height: 20),
+            const SizedBox(height: 34),
 
-          // Buttons for Retake and Store
-          Row(
-            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-            children: [
-              ElevatedButton(
-                onPressed: () => onRetake(),
-                child: const Text('Retake'),
+            // Buttons for Retake and Store
+            Padding(
+              padding: const EdgeInsets.symmetric(horizontal: 20),
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: [
+                  GestureDetector(
+                    onTap: () => onRetake(),
+                    child: Container(
+                        decoration: BoxDecoration(),
+                        child: Text(
+                          'ถ่ายใหม่',
+                          style: Theme.of(context)
+                              .textTheme
+                              .headlineLarge
+                              ?.copyWith(color: Colors.white),
+                        )),
+                  ),
+                  GestureDetector(
+                    onTap: () => onStore(),
+                    child: Container(
+                        padding:
+                            EdgeInsets.symmetric(horizontal: 12, vertical: 6),
+                        decoration: BoxDecoration(
+                            color: Colors.white,
+                            borderRadius: BorderRadius.circular(1000)),
+                        child: Text(
+                          'เก็บภาพ',
+                          style: Theme.of(context).textTheme.headlineLarge,
+                        )),
+                  ),
+                ],
               ),
-              ElevatedButton(
-                onPressed: () => onStore(),
-                child: const Text('Store'),
-              ),
-            ],
-          ),
-        ],
+            ),
+          ],
+        ),
       ),
     );
   }
