@@ -81,8 +81,8 @@ dependencies:
   camera:
   flutter_svg:
   flutter_launcher_icons:
-  better_open_file:
-  flutter_dotenv:
+  better_open_file: ^3.6.5
+  flutter_dotenv: ^5.2.1
   shimmer:
 
 dev_dependencies:
@@ -111,9 +111,13 @@ flutter:
     - assets/allergic/
     - assets/bottomNavigation/
     - assets/form/
+    - assets/Logo.png
     - assets/home/
     - assets/skintypequiz/
     - assets/illustration skintype.svg
+    - assets/icons/
+    - .env
+    - assets/test_img.png
 
   #   - images/a_dot_ham.jpeg
 

@@ -285,8 +285,7 @@ class _CameraPageState extends State<CameraPage> {
                   const EdgeInsets.all(70), // Adjust padding for positioning
               child: GestureDetector(
                 onTap: () {
-                  print("Take photo tapped"); // Debugging print
-                  takePhoto(); // Call the method
+                  takePhoto();
                 },
                 child: Container(
                   padding: EdgeInsets.all(4),
